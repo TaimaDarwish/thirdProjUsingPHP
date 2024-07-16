@@ -33,7 +33,7 @@
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $name = htmlspecialchars($_POST['name']);
                     $color = htmlspecialchars($_POST['color']);
-                    echo "<p>Welcome, <span id='name'>$name</span> your favorite color is <span id='color'>$color</span></p>";
+                    echo "<p>Welcome,<span id='name'>$name</span> the selected color is <span id='color'>$color</span></p>";
                     echo "<p><span id='color'>$color</span> is a beautiful color, you can blend it with another color to produce new color, as example:</p>";
                     switch ($color) {
                         case 'Blue':
