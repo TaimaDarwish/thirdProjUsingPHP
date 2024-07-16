@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.mid-container {
+  padding: 20px;
+  width: 50%;
+  margin: 20px auto;
+  border: 1px solid #4589d1;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+}
+
+p {
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+li {
+  margin-left: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
