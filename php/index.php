@@ -33,7 +33,7 @@
             </ul>
         </div>
         <div class="form-container">
-            <form action="second.php" method="post" style="width: 100%; padding-right: 20px; padding-left: 20px">
+            <form action="submit.php" method="post" style="width: 100%; padding-right: 20px; padding-left: 20px">
 
 
                 <h2>Your post</h2>

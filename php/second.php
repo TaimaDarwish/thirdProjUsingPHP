@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="second.css">
     <link rel="stylesheet" href="common.css" />
 
+
     <script src="https://kit.fontawesome.com/32e0425d85.js" crossorigin="anonymous"></script>
 </head>
 
@@ -30,36 +31,38 @@
             </div>
             <div class="mid-container">
                 <?php
-                if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $name = htmlspecialchars($_POST['name']);
-                    $color = htmlspecialchars($_POST['color']);
-                    echo "<p>Welcome, <span id='name'>$name</span>  color is <span id='color'>$color</span></p>";
-                    echo "<p><span id='color'>$color</span> is a beautiful color, you can blend it with another color to produce new color, as example:</p>";
-                    switch ($color) {
-                        case 'Blue':
-                            echo " <li>Blue + Pink = Purple </li>";
+                if (isset($_GET['name']) && isset($_GET['color'])) {
+                    $name = htmlspecialchars($_GET['name']);
+                    $color = htmlspecialchars($_GET['color']);
+                    echo "<p>Welcome, <span id='name'>$name</span>. Your favorite color is <span id='color'>$color</span>.</p>";
+                    echo "<p><span id='color'>$color</span> is a beautiful color. You can blend it with another color to produce new colors, for example:</p>";
+                    switch (strtolower($color)) {
+                        case 'blue':
+                            echo "<li>Blue + Pink = Purple</li>";
                             echo "<li>Blue + Yellow = Green</li>";
                             echo "<li>Blue + Purple = Violet</li>";
                             break;
-                        case 'Pink':
+                        case 'pink':
                             echo "<li>Pink + Yellow = Orange</li>";
                             echo "<li>Pink + Blue = Purple</li>";
                             echo "<li>Pink + Purple = Light Plum</li>";
                             break;
-                        case 'Yellow':
+                        case 'yellow':
                             echo "<li>Yellow + Blue = Green</li>";
                             echo "<li>Yellow + Pink = Orange</li>";
                             echo "<li>Yellow + Purple = Light Brown</li>";
                             break;
-                        case 'Purple':
-                            echo "<li>Purple + Blue = Green</li>";
-                            echo "<li>Purple + Pink = Green</li>";
+                        case 'purple':
+                            echo "<li>Purple + Blue = Violet</li>";
+                            echo "<li>Purple + Pink = Light Plum</li>";
                             echo "<li>Purple + Yellow = Light Brown</li>";
                             break;
                         default:
                             echo "<p>Color blending not defined for $color.</p>";
                             break;
                     }
+                } else {
+                    echo "<p>No data received.</p>";
                 }
                 ?>
             </div>
